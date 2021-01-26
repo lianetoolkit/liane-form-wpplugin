@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name: Liane Form
- * Plugin URI: https://github.com/liane-toolkit/liane-form-wpplugin
+ * Plugin URI: https://github.com/lianetoolkit/liane-form-wpplugin
  * Description: Embed Liane Forms
  * Version: 0.1.1
  * Author: Instituto Update
