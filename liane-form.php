@@ -33,7 +33,7 @@ class Liane_Form {
     }
 
     // Validate ID match
-    if(strlen($a['id']) > 17 && !preg_match('/^[\w\d]{17}$/', $a['id'])) {
+    if(strlen($a['id']) > 17 || !preg_match('/^[\w\d]{17}$/', $a['id'])) {
       return "Invalid form parameters.";
     }
     ob_start();
