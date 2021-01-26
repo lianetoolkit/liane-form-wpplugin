@@ -4,7 +4,7 @@
  * Plugin Name: Liane Form
  * Plugin URI: https://github.com/liane-toolkit/liane-form-wpplugin
  * Description: Embed Liane Forms
- * Version: 0.1.0
+ * Version: 0.1.1
  * Author: Instituto Update
  * Author URI: https://institutoupdate.org.br
  */
@@ -15,24 +15,36 @@ class Liane_Form {
     add_shortcode( 'liane_form' , array( $this, 'shortcode' ) );
   }
   function wp_footer() {
-    wp_enqueue_script( 'liane-form', plugin_dir_url(__FILE__) . 'liane-form.js', array(), '0.1.0' );
+    wp_enqueue_script( 'liane-form', plugin_dir_url(__FILE__) . 'liane-form.js', array(), '0.1.1' );
   }
   function shortcode($atts) {
     $a = shortcode_atts( array(
       'url' => '',
-      'id' => ''
+      'id' => '',
+      'allow_non_secure' => "0"
     ), $atts );
 
-    if(!$a['url'] || !$a['id']) {
-      return '';
+    $url = filter_var($a['url'], FILTER_VALIDATE_URL);
+    $allow_non_secure = filter_var($a['allow_non_secure'], FILTER_VALIDATE_BOOLEAN);
+
+    // Validate non-empty required atts
+    if(!$url || !$a['id']) {
+      return "Invalid form parameters.";
     }
 
+    // Validate ID match
+    if(strlen($a['id']) > 17 && !preg_match('/^[\w\d]{17}$/', $a['id'])) {
+      return "Invalid form parameters.";
+    }
     ob_start();
     ?>
     <div
       class="liane-form"
-      data-url="<?php echo $a['url']; ?>"
+      data-url="<?php echo $url; ?>"
       data-campaignId="<?php echo $a['id']; ?>"
+      <?php if($allow_non_secure) : ?>
+        data-allowNonSecure="true"
+      <?php endif; ?>
     >
     </div>
     <?php

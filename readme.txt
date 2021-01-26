@@ -4,7 +4,7 @@ Donate link: https://institutoupdate.org.br
 Tags: liane, form, shortcode
 Requires at least: 4.6
 Tested up to: 5.6
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 Requires PHP: 7.0
 License: MIT
 License URI: https://github.com/lianetoolkit/liane-form-wpplugin/blob/main/LICENSE
