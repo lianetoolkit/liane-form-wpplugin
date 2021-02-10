@@ -4,7 +4,7 @@ Donate link: https://institutoupdate.org.br
 Tags: liane, form, shortcode
 Requires at least: 4.6
 Tested up to: 5.6
-Stable tag: 0.1.4
+Stable tag: 0.1.5
 Requires PHP: 7.0
 License: MIT
 License URI: https://github.com/lianetoolkit/liane-form-wpplugin/blob/main/LICENSE
@@ -24,6 +24,10 @@ Use a simple shortcode to embed your campaign form into your WordPress site.
 * Use `[liane_form]` shortcode in any post or page to embed your form!
 
 == Changelog ==
+
+= 0.1.5 =
+* Add widget
+* Support compact mode
 
 = 0.1.4 =
 * Support redirection and scroll into view after submit

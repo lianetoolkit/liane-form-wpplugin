@@ -4,7 +4,7 @@
  * Plugin Name: Liane Form
  * Plugin URI: https://github.com/lianetoolkit/liane-form-wpplugin
  * Description: Embed Liane Forms
- * Version: 0.1.4
+ * Version: 0.1.5
  * Author: Instituto Update
  * Author URI: https://institutoupdate.org.br
  */
@@ -50,7 +50,7 @@ class Liane_Form {
     return ob_get_clean();
   }
   function wp_footer() {
-    wp_enqueue_script( 'liane-form', plugin_dir_url(__FILE__) . 'liane-form.js', array(), '0.1.3' );
+    wp_enqueue_script( 'liane-form', plugin_dir_url(__FILE__) . 'liane-form.js', array(), '0.1.4' );
   }
 }
 
